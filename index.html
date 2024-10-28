@@ -2,9 +2,10 @@
 
 <head>
   <title>Fotky</title>
-  <link rel="shortcut icon" href="http://fotkygymji2013.php5.cz/ikona.png" />
+  <link rel="shortcut icon" href="img/ikona.png" />
   <link rel="stylesheet" type="text/css" href="style.css">
   <script>
+
     function getRandomImage() {
       //declare an array to store images
       var myPix = new Array("img/bg.jpg", "img/bg2.jpg", "img/bg3.jpg", "img/bg4.jpg", "img/bg5.jpg", "img/bg6.jpg", "img/bg7.jpg", "img/bg8.jpg");
@@ -12,10 +13,16 @@
       // genrate a number and provide to genrate image accordingly
       var number = Math.floor(Math.random() * myPix.length);
       // return the images which are genrated
-      document.body.style.backgroundImage = "url(" + myPix[number] + ")"
+      var downloadingImage = new Image();
+
+      downloadingImage.onload = function () {
+        console.log('Image loaded');
+        document.body.style.backgroundImage = "url(" + this.src + ")";
+      };
+      downloadingImage.src = myPix[number];
     }
     window.onload = getRandomImage;
-    setInterval(getRandomImage, 7000)
+    setInterval(getRandomImage, 7000);
   </script>
 </head>
 
@@ -147,11 +154,11 @@
 
     <b>Slovinsko:</b> <a href="https://photos.app.goo.gl/8x5S9PryVjYZX7EJ6">klikni zde</a>
     <p>
-    <b>Koronový pivko v kasárnách:</b> <a href="https://photos.app.goo.gl/f2vBggt1PBR3BCPf9">klikni zde</a>
+      <b>Koronový pivko v kasárnách:</b> <a href="https://photos.app.goo.gl/f2vBggt1PBR3BCPf9">klikni zde</a>
     <p>
-    <b>Výlet Tábor:</b> <a href="https://photos.app.goo.gl/yhkZc7mnLy9oskpTA">klikni zde</a>
+      <b>Výlet Tábor:</b> <a href="https://photos.app.goo.gl/yhkZc7mnLy9oskpTA">klikni zde</a>
     <p>
-    <b>Výlet Brloh:</b> <a href="https://photos.app.goo.gl/UeYPBZ4UzwwCXmnB7">klikni zde</a>
+      <b>Výlet Brloh:</b> <a href="https://photos.app.goo.gl/UeYPBZ4UzwwCXmnB7">klikni zde</a>
     <p>
       <b>Majálesový průvod:</b> <a href="https://photos.app.goo.gl/C53YZafeJHifqRTX6">klikni zde</a>
     <p>
