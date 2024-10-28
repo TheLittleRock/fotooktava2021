@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Random Image Genrator</title>
+</head>
+<script>
+function getRandomImage() {
+    //declare an array to store images
+    var myPix = new Array("img/bg.jpg","img/bg2.jpg","img/bg3.jpg");
+
+// genrate a number and provide to genrate image accordingly
+var number = Math.floor(Math.random()*myPix.length); 
+ // return the images which are genrated
+ return document.getElementById('result').innerHTML = '<img src="' + myPix[number]+'" />'; 
+} 
+</script>
+<body>
+<center><h2 style="color:red;"> Random Image Generator</center></h2>
+<h4> Click the button to genrate random images</h4>
+<button onclick="setInterval(getRandomImage, 20000)"> Generate Image</button>
+<br> <br>
+<span id="result" align="center"> </span>
+</body> 
+</html>   
+
